@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -20,12 +20,12 @@
         {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
         {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
     </title>
-    
+
 
   {% if page_description %}
-    {% if template == 'index' %} 
+    {% if template == 'index' %}
      <meta name="description" content="Discover frank green Indonesia: reusable cups & tumbler that are stain & odour resistant, spill-proof, and easy to use with one-handed toggle buttons. Shop now.">
-    {% else %} 
+    {% else %}
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
   {% endif %}
@@ -225,6 +225,389 @@
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
       }
 
+
+      /* maintenanceclass */
+      .maintenanceclass-wrapper {
+      background-image: url('https://cdn.shopify.com/s/files/1/0906/2072/3475/files/bannew_new.png?v=1734025990');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .maintenanceclass-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .maintenanceclass-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      max-width: 90%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .maintenanceclass-title {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    .maintenanceclass-message {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .maintenanceclass-social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .maintenanceclass-instagram-link {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
+
+    .maintenanceclass-whatsapp-button {
+      padding: 1rem 2rem;
+      background-color: #25D366;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .maintenanceclass-content {
+        padding: 1rem;
+      }
+
+      .maintenanceclass-title {
+        font-size: 2rem;
+      }
+
+      .maintenanceclass-message {
+        font-size: 1.2rem;
+      }
+
+      .maintenanceclass-instagram-link {
+        font-size: 1.5rem;
+      }
+
+      .maintenanceclass-whatsapp-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+
+
+ /* Popup container */
+ #popup-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    #popup-container.active {
+      opacity: 1;
+      visibility: visible;
+      display: flex;
+    }
+
+    /* Popup box */
+    #popup {
+      background: white;
+      display: flex;
+      max-width: 850px;
+      width: 90%;
+      height: auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    #popup-container.active #popup {
+      transform: scale(1);
+    }
+
+    /* Image section */
+    .popup-image-wrapper {
+      width: 45%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .popup-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .popup-image-wrapper:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Content section */
+    #popup-content {
+      width: 55%;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #009738;
+      position: relative;
+    }
+
+    /* Typography */
+    #popup-content h2 {
+      font-size: 28px;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: white;
+      letter-spacing: -0.02em;
+    }
+
+    #popup-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Form elements */
+    .subscribeContainer {
+      display: flex;
+      flex-direction: column;
+      margin-top: 8px;
+    }
+
+    .subscribeContainer input {
+      padding: 14px 16px;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+
+    .subscribeContainer input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    }
+
+    .subscribeContainer input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .subscribeContainer button {
+      padding: 14px 20px;
+      background-color: white;
+      color: #009738;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      display: flex;
+    }
+
+    .subscribeContainer button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .subscribeContainer button:active {
+      transform: translateY(0);
+    }
+    .button-icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .submit-button:hover .button-icon {
+    transform: translateX(3px);
+  }
+  .input-wrapper-subscribe{
+    display:flex;
+    column-gap: 10px;
+  }
+
+    /* Close button */
+    #popup-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    #popup-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(90deg);
+    }
+
+    #popup-close svg {
+      width: 14px;
+      height: 14px;
+      fill: white;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 768px) {
+      #popup {
+        flex-direction: column;
+        max-width: 450px;
+      }
+
+      .popup-image-wrapper {
+        width: 100%;
+        height: 220px;
+      }
+
+      #popup-content {
+        width: 100%;
+        padding: 36px 28px;
+      }
+
+      #popup-content h2 {
+        font-size: 24px;
+      }
+    }
+
+/*succes and eror message */
+    .message-container {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideIn 0.4s ease forwards, fadeIn 0.4s ease forwards;
+  }
+
+  .success-container {
+    background-color: rgba(0, 200, 83, 0.1);
+    border-left: 4px solid #00C853;
+  }
+
+  .error-container {
+    background-color: rgba(244, 67, 54, 0.1);
+    border-left: 4px solid #F44336;
+  }
+
+  .message-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .message-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .success-container .message-icon svg {
+    stroke: #00C853;
+  }
+
+  .error-container .message-icon svg {
+    stroke: #F44336;
+  }
+
+  .message-text {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .success-container .message-text {
+    color: white;
+  }
+
+  .error-container .message-text {
+    color: #d32f2f;
+  }
+
+/* succes and eror message */
+
+    @media screen and (max-width: 480px) {
+      .popup-image-wrapper {
+        height: 180px;
+      }
+
+      #popup-content {
+        padding: 28px 24px;
+      }
+
+      #popup-content h2 {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+
+      #popup-content p {
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+
+      .subscribeContainer input,
+      .subscribeContainer button {
+        padding: 12px 14px;
+        font-size: 14px;
+      }
+    }
       *,
       *::before,
       *::after {
@@ -302,78 +685,205 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-      {{ 'accessibility.skip_to_text' | t }}
-    </a>
+    {% if settings.enable_maintenance_page %}
+      <div class="maintenanceclass-wrapper">
+        <!-- Semi-transparent background overlay -->
+        <div class="maintenanceclass-overlay"></div>
 
-    {%- if settings.cart_type == 'drawer' -%}
-      {%- render 'cart-drawer' -%}
-    {%- endif -%}
+        <!-- Content container -->
+        <div class="maintenanceclass-content">
+          <h1 class="maintenanceclass-title">{{ settings.title_maintenance }}</h1>
 
-    {% sections 'header-group' %}
+          <div class="maintenanceclass-message" id="maintenanceMessage">
+           {{ settings.text_maintenance }}
+          </div>
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
+          <!-- Social Media Links -->
+          <div class="maintenanceclass-social-links">
+            <a href="https://www.instagram.com/frankgreen_id/" target="_blank" class="maintenanceclass-instagram-link">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@frankgreen_indonesia" target="_blank" class="maintenanceclass-instagram-link">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
 
-    {% sections 'footer-group' %}
+          <a href="https://wa.me/62819883326" target="_blank" class="maintenanceclass-whatsapp-button">
+            {{ settings.button_maintenance_text }}
+          </a>
+        </div>
+      </div>
+    {% else %}
+      <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+        {{ 'accessibility.skip_to_text' | t }}
+      </a>
 
-    <ul hidden>
-      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
-      <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
-    </ul>
+      {%- if settings.cart_type == 'drawer' -%}
+        {%- render 'cart-drawer' -%}
+      {%- endif -%}
 
-    <script>
-      window.shopUrl = '{{ request.origin }}';
-      window.routes = {
-        cart_add_url: '{{ routes.cart_add_url }}',
-        cart_change_url: '{{ routes.cart_change_url }}',
-        cart_update_url: '{{ routes.cart_update_url }}',
-        cart_url: '{{ routes.cart_url }}',
-        predictive_search_url: '{{ routes.predictive_search_url }}',
-      };
+      {% sections 'header-group' %}
 
-      window.cartStrings = {
-        error: `{{ 'sections.cart.cart_error' | t }}`,
-        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
-      };
+      <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
 
-      window.variantStrings = {
-        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
-        soldOut: `{{ 'products.product.sold_out' | t }}`,
-        unavailable: `{{ 'products.product.unavailable' | t }}`,
-        unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
-      };
+          <div id="popup-container">
+            <div id="popup">
+              <div class="popup-image-wrapper">
+                {{ settings.image_popup | image_url: width: 600 | image_tag: id: 'image-popup', style: 'max-width: auto;' }}
+              </div>
+              <div id="popup-content">
+                <span id="popup-close">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M18.3 5.71a.996.996 0 00-1.41 0L12 10.59 7.11 5.7A.996.996 0 105.7 7.11L10.59 12 5.7 16.89a.996.996 0 101.41 1.41L12 13.41l4.89 4.89a.996.996 0 101.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
+                  </svg>
+                </span>
+                <h2>{{ settings.title_popup }}</h2>
+                <p>{{ settings.description_popup }}</p>
+                <div class="subscribeContainer">
+                  {% form 'customer', id: 'popup-subscribe-form' %}
+                  <div>
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <div class="input-wrapper-subscribe">
+                      <input type="email" name="contact[email]" placeholder="Your email address" aria-label="Email Address" required>
+                      <button type="submit" class="submit-button">
+                        <span class="button-text">{{ settings.button_text }}</span>
+                        <span class="button-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
 
-      window.quickOrderListStrings = {
-        itemsAdded: `{{ 'sections.quick_order_list.items_added.other' | t: quantity: '[quantity]' }}`,
-        itemAdded: `{{ 'sections.quick_order_list.items_added.one' | t: quantity: '[quantity]' }}`,
-        itemsRemoved: `{{ 'sections.quick_order_list.items_removed.other' | t: quantity: '[quantity]' }}`,
-        itemRemoved: `{{ 'sections.quick_order_list.items_removed.one' | t: quantity: '[quantity]' }}`,
-        viewCart: `{{- 'sections.quick_order_list.view_cart' | t -}}`,
-        each: `{{- 'sections.quick_order_list.each' | t: money: '[money]' }}`,
-        min_error: `{{- 'sections.quick_order_list.min_error' | t: min: '[min]' }}`,
-        max_error: `{{- 'sections.quick_order_list.max_error' | t: max: '[max]' }}`,
-        step_error: `{{- 'sections.quick_order_list.step_error' | t: step: '[step]' }}`,
-      };
+                    {% if form.posted_successfully? %}
+                      <div class="message-container success-container">
+                        <div class="message-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                          </svg>
+                        </div>
+                        <div class="message-text">Successfully subscribed!</div>
+                      </div>
+                    {% endif %}
 
-      window.accessibilityStrings = {
-        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
-        shareSuccess: `{{ 'general.share.success_message' | t }}`,
-        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
-        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
-        recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
-        recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
-        countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
-      };
-    </script>
+                    {% if form.errors %}
+                      <div class="message-container error-container">
+                        <div class="message-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                          </svg>
+                        </div>
+                        <div class="message-text">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</div>
+                      </div>
+                    {% endif %}
+                  {% endform %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ content_for_layout }}
 
-    {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
+      </main>
 
-    {%- if settings.cart_type == 'drawer' -%}
-      <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
+      {% sections 'footer-group' %}
+
+      <ul hidden>
+        <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+        <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
+      </ul>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const popupContainer = document.getElementById('popup-container');
+          const showPopupBtn = document.getElementById('show-popup');
+          const closePopupBtn = document.getElementById('popup-close');
+
+          // Show popup button for demo purposes
+          if (showPopupBtn) {
+            showPopupBtn.addEventListener('click', () => {
+              popupContainer.classList.add('active');
+            });
+          }
+
+          // Check if we should show the popup (once per day)
+          const days = 0;
+          const now = new Date().getTime();
+          const popupDisplayedTimestamp = localStorage.getItem('popupDisplayedTimestamp');
+
+          if (!popupDisplayedTimestamp || now - popupDisplayedTimestamp > days * 24 * 60 * 60 * 1000) {
+            popupContainer.classList.add('active');
+            localStorage.setItem('popupDisplayedTimestamp', now);
+          }
+
+          // Close popup when clicking X button
+          closePopupBtn.addEventListener('click', function() {
+            popupContainer.classList.remove('active');
+          });
+
+          // Close popup when clicking outside
+          popupContainer.addEventListener('click', (e) => {
+            if (e.target === popupContainer) {
+              popupContainer.classList.remove('active');
+            }
+          });
+        });
+        window.shopUrl = '{{ request.origin }}';
+        window.routes = {
+          cart_add_url: '{{ routes.cart_add_url }}',
+          cart_change_url: '{{ routes.cart_change_url }}',
+          cart_update_url: '{{ routes.cart_update_url }}',
+          cart_url: '{{ routes.cart_url }}',
+          predictive_search_url: '{{ routes.predictive_search_url }}',
+        };
+
+        window.cartStrings = {
+          error: `{{ 'sections.cart.cart_error' | t }}`,
+          quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
+        };
+
+        window.variantStrings = {
+          addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+          soldOut: `{{ 'products.product.sold_out' | t }}`,
+          unavailable: `{{ 'products.product.unavailable' | t }}`,
+          unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
+        };
+
+        window.quickOrderListStrings = {
+          itemsAdded: `{{ 'sections.quick_order_list.items_added.other' | t: quantity: '[quantity]' }}`,
+          itemAdded: `{{ 'sections.quick_order_list.items_added.one' | t: quantity: '[quantity]' }}`,
+          itemsRemoved: `{{ 'sections.quick_order_list.items_removed.other' | t: quantity: '[quantity]' }}`,
+          itemRemoved: `{{ 'sections.quick_order_list.items_removed.one' | t: quantity: '[quantity]' }}`,
+          viewCart: `{{- 'sections.quick_order_list.view_cart' | t -}}`,
+          each: `{{- 'sections.quick_order_list.each' | t: money: '[money]' }}`,
+          min_error: `{{- 'sections.quick_order_list.min_error' | t: min: '[min]' }}`,
+          max_error: `{{- 'sections.quick_order_list.max_error' | t: max: '[max]' }}`,
+          step_error: `{{- 'sections.quick_order_list.step_error' | t: step: '[step]' }}`,
+        };
+
+        window.accessibilityStrings = {
+          imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+          shareSuccess: `{{ 'general.share.success_message' | t }}`,
+          pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+          playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+          recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
+          recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
+          countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
+        };
+      </script>
+
+      {%- if settings.predictive_search_enabled -%}
+        <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+      {%- endif -%}
+
+      {%- if settings.cart_type == 'drawer' -%}
+        <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+      {%- endif -%}
+{% endif %}
+
   </body>
 </html>

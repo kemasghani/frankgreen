@@ -142,7 +142,7 @@
           }
         },
         "in_cart_upsell_product_app_block_aJtmUm": {
-          "type": "shopify://apps/in-cart-upsell-cross-sell/blocks/product_app_block/6a252f23-8726-4893-8b3b-1ae15957efc3",
+          "type": "shopify://apps/icu-in-cart-upsell-cross-sell/blocks/product_app_block/6a252f23-8726-4893-8b3b-1ae15957efc3",
           "settings": {
             "icu-product-selector": "#CartDrawer-CartItems",
             "icu-product-action": "after",

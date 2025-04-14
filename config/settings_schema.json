@@ -8,6 +8,74 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "Pop Up",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_popup",
+        "label": "t:settings_schema.logo.settings.logo_image.label"
+      },
+      {
+        "type": "text",
+        "id": "title_popup",
+        "label": "Title",
+        "default": "Join our exclusive community today!"
+      },
+      {
+        "type": "text",
+        "id": "description_popup",
+        "label": "Description",
+        "default": "Subscribe to our newsletter and receive special offers, early access to new products, and insider content directly to your inbox."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Subscribe Now"
+      },
+      {
+        "type": "checkbox",
+        "id": "input",
+        "label": "Display input",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Maintenance Page",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_maintenance",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "title_maintenance",
+        "label": "Maintenance Page Title",
+        "default": "Shop Under Maintenance"
+      },
+      {
+        "type": "text",
+        "id": "text_maintenance",
+        "label": "Maintenance Page Text",
+        "default": "We'll be back soon"
+      },
+      {
+        "type": "text",
+        "id": "button_maintenance_text",
+        "label": "Text button",
+        "default": "Button"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_maintenance_page",
+        "label": "Enable Maintenance Page",
+        "default": false
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
