@@ -132,8 +132,11 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
+<<<<<<< HEAD
     "title": "<p>Join the Frankgreen Family</p>",
     "description": "<p>Become a member of the Frankgreen community and enjoy special discounts. <br/>Don't miss out, sign up now and elevate your experience with Frankgreen!</p>",
+=======
+>>>>>>> fd1f7c4744e64b41c9e560b065e5352ec821f9d7
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -172,6 +175,7 @@
         "disabled": true,
         "settings": {}
       },
+<<<<<<< HEAD
       "9877325503541698247": {
         "type": "shopify://apps/in-cart-upsell/blocks/ajax_cart_app_block/6a252f23-8726-4893-8b3b-1ae15957efc3",
         "disabled": false,
@@ -181,6 +185,8 @@
           "icu-ajax-cart-refresh-code": "document.querySelector('.nudge-offer').remove(); \ndocument.querySelector('.nudge-offer').remove(); ajaxCart.load(); InCartUpsell.prototype.findOfferWhenReady();"
         }
       },
+=======
+>>>>>>> fd1f7c4744e64b41c9e560b065e5352ec821f9d7
       "1692329972272007824": {
         "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_main/7411210d-7b32-4c09-9455-e129e3be4729",
         "disabled": false,
@@ -190,6 +196,19 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
+<<<<<<< HEAD
+=======
+      },
+      "9877325503541698247": {
+        "type": "shopify://apps/icu-in-cart-upsell-cross-sell/blocks/ajax_cart_app_block/6a252f23-8726-4893-8b3b-1ae15957efc3",
+        "disabled": true,
+        "settings": {
+          "icu-ajax-selector": "form[action^='/cart']",
+          "icu-ajax-action": "after",
+          "icu-ajax-cart-refresh-code": "document.querySelector('.nudge-offer').remove(); \ndocument.querySelector('.nudge-offer').remove(); ajaxCart.load(); InCartUpsell.prototype.findOfferWhenReady();",
+          "icu-show-currency-code-ajax": true
+        }
+>>>>>>> fd1f7c4744e64b41c9e560b065e5352ec821f9d7
       }
     },
     "color_schemes": {
